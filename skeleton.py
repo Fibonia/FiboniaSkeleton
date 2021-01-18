@@ -32,8 +32,7 @@ def referral(name):
     num = alpha_to_num(name)
     #encode
     hashid = hashids.encrypt(num)
-    #decode
-    ints = hashids.decrypt(hashid)[0]
+
 
 def otp():
     """ Code used to generate a one-time password for every single appointment on Fibonia """
