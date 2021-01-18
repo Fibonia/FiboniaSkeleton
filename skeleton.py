@@ -10,18 +10,18 @@ def discount():
     """ Code used to generate a discount code to be used in Fibonia """
     #Your Code Here
     
-def select():
+def select(collection,filter,one):
     """ Extracts data from a database """
     #Your Code Here
 
-def update():
+def update(collection,id,value):
     """ Updates data in a database """
     #Your Code Here
 
-def delete():
+def delete(collection,id,value):
     """ Deletes data from a database """
     #Your Code Here
     
-def insert():
+def insert(collection,id,value):
     """ Inserts new data into a database """
     #Your Code Here
