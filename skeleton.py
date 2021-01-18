@@ -50,6 +50,7 @@ def otp():
 def discount():
     """ Code used to generate a discount code to be used in Fibonia """
     #Your Code Here
+<<<<<<< HEAD
 
 
 class Connect(object):
@@ -62,6 +63,10 @@ connection = Connect.get_connection()
 db = client.test
 
 def select():
+=======
+    
+def select(collection,filter,one):
+>>>>>>> ae8a1fa5fcbac6866c86df0529a953a3f1832738
     """ Extracts data from a database """
     #Your Code Here
     result = db.inventory.find({})
@@ -74,7 +79,7 @@ def select():
     # selects the item where status is "D"
     # db.inventory.find({"status": "D"})
 
-def update():
+def update(collection,id,value):
     """ Updates data in a database """
     #Your Code Here
     db.inventory.update_one({})
@@ -86,7 +91,7 @@ def update():
     # {"$set": {"size.uom": "cm", "status": "P"},
     #  "$currentDate": {"lastModified": True}})
 
-def delete():
+def delete(collection,id,value):
     """ Deletes data from a database """
     #Your Code Here
     db.inventory.delete_one({})
@@ -95,8 +100,12 @@ def delete():
     # deletes the first document where status is "D"
     # db.inventory.delete_one({"status": "D"})
     
+<<<<<<< HEAD
 
 def insert():
+=======
+def insert(collection,id,value):
+>>>>>>> ae8a1fa5fcbac6866c86df0529a953a3f1832738
     """ Inserts new data into a database """
     #Your Code Here
     db.inventory.insert_one({})
