@@ -50,7 +50,6 @@ def otp():
 def discount():
     """ Code used to generate a discount code to be used in Fibonia """
     #Your Code Here
-<<<<<<< HEAD
 
 
 class Connect(object):
@@ -63,10 +62,6 @@ connection = Connect.get_connection()
 db = client.test
 
 def select():
-=======
-    
-def select(collection,filter,one):
->>>>>>> ae8a1fa5fcbac6866c86df0529a953a3f1832738
     """ Extracts data from a database """
     #Your Code Here
     result = db.inventory.find({})
@@ -100,12 +95,8 @@ def delete(collection,id,value):
     # deletes the first document where status is "D"
     # db.inventory.delete_one({"status": "D"})
     
-<<<<<<< HEAD
 
 def insert():
-=======
-def insert(collection,id,value):
->>>>>>> ae8a1fa5fcbac6866c86df0529a953a3f1832738
     """ Inserts new data into a database """
     #Your Code Here
     db.inventory.insert_one({})
