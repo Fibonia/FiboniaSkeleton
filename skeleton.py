@@ -3,6 +3,7 @@ import pyotp
 from pprint import pprint
 from connect import Connect
 from pymongo import MongoClient
+import ssl 
 
 def referral(name):
     """ Code used to generate a referral code for every single account on Fibonia """
@@ -55,33 +56,34 @@ def discount():
 class Connect(object):
     @staticmethod    
     def get_connection():
-        return MongoClient("mongodb://$[username]:$[password]@$[hostlist]/$[database]?authSource=$[authSource]")
+        mongo_url = "mongodb+srv://gurk91:Fibonia!2345@cluster0.a5ggi.mongodb.net/test?retryWrites=true&w=majority"
+        return pymongo.MongoClient(mongo_url, ssl=True, ssl_cert_reqs=ssl.CERT_NONE)
 
-connection = Connect.get_connection()
-# whatever comes after "client." is the name of the collection, which in this case is "test"
-db = client.test
+client = Connect.get_connection()
+db = client.get_database('FibTest')
 
 def select():
     """ Extracts data from a database """
+
     #Your Code Here
-    result = db.inventory.find({})
+    result = db.Users.find({})
     return result
 
     # iterate over the results
-    # for inventory in cursor:
-    #     pprint(inventory)
+    # for Users in cursor:
+    #     pprint(Users)
 
     # selects the item where status is "D"
-    # db.inventory.find({"status": "D"})
+    # db.Users.find({"status": "D"})
 
 def update(collection,id,value):
     """ Updates data in a database """
     #Your Code Here
-    db.inventory.update_one({})
-    db.inventory.update_many({})
+    db.Users.update_one({})
+    db.Users.update_many({})
 
     # updates the item with the name "paper"
-    # db.inventory.update_one(
+    # db.Users.update_one(
     # {"item": "paper"},
     # {"$set": {"size.uom": "cm", "status": "P"},
     #  "$currentDate": {"lastModified": True}})
@@ -89,18 +91,18 @@ def update(collection,id,value):
 def delete(collection,id,value):
     """ Deletes data from a database """
     #Your Code Here
-    db.inventory.delete_one({})
-    db.inventory.delete_many({})
+    db.Users.delete_one({})
+    db.Users.delete_many({})
 
     # deletes the first document where status is "D"
-    # db.inventory.delete_one({"status": "D"})
+    # db.Users.delete_one({"status": "D"})
     
 
 def insert():
     """ Inserts new data into a database """
     #Your Code Here
-    db.inventory.insert_one({})
-    db.inventory.insert_many({})
+    db.Users.insert_one({})
+    db.Users.insert_many({})
 
     # example insertion input:
     # [
